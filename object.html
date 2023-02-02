@@ -32,14 +32,6 @@
     <script>
         let arr = []
         let arr2 = [] 
-        let users = new Object()
-        users = {
-            username: "username",
-            password: "password",
-            name: "name",
-            surname: "surname",
-            age: 16
-        } 
         reg.onclick = function(){
             for(let i = 0; i < arr.length; i += 2){
                 if(document.getElementById("reg_username").value === arr[i]){
@@ -47,12 +39,20 @@
                     return
                     }}
             if(document.getElementById("reg_password").value.length >= 4 && document.getElementById("reg_password").value.length <= 12) {
+                let users = new Object()
+            users = {
+                username: "username",
+                password: "password",
+                name: "name",
+                surname: "surname",
+                age: 16
+            } 
             users.username = reg_username.value
             users.password = reg_password.value
             users.name = reg_name.value
             users.surname = reg_surname.value
             users.age = reg_age.value
-            arr2.unshift(users)
+            arr2.push(users)
             console.log(arr2)
             arr.unshift(reg_password.value)
             arr.unshift(reg_username.value) 
