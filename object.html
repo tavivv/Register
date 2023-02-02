@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h2>Регистрация</h2>
+    Ник
+    <textarea type="text" name="reg_username" id="reg_username"></textarea>
+    Имя
+    <textarea type="text" name="reg_name" id="reg_name"></textarea>
+    Фамилия
+    <textarea type="text" name="reg_surname" id="reg_surname"></textarea>
+    Возраст
+    <textarea type="text" name="reg_age" id="reg_age"></textarea>
+    Пароль
+    <textarea type="password" name="reg_password" id="reg_password"></textarea>
+    <input type="submit" id="reg" value="Sign up">
+    </div>
+    <h2>Вход</h2>
+    <div>
+    Ник
+    <textarea type="text" name="log_username" id="log_username" ></textarea>
+    Пароль
+    <textarea type="password" name="log_password" id="log_password" ></textarea>
+    <input type="submit" id="log" value="Log in">
+    </div>
+    <script>
+        let arr = []
+        let arr2 = [] 
+        let users = new Object()
+        users = {
+            username: "username",
+            password: "password",
+            name: "name",
+            surname: "surname",
+            age: 16
+        } 
+        reg.onclick = function(){
+            for(let i = 0; i < arr.length; i += 2){
+                if(document.getElementById("reg_username").value === arr[i]){
+                    alert("You can't use this username")
+                    return
+                    }}
+            if(document.getElementById("reg_password").value.length >= 4 && document.getElementById("reg_password").value.length <= 12) {
+            users.username = reg_username.value
+            users.password = reg_password.value
+            users.name = reg_name.value
+            users.surname = reg_surname.value
+            users.age = reg_age.value
+            arr2.unshift(users)
+            console.log(arr2)
+            arr.unshift(reg_password.value)
+            arr.unshift(reg_username.value) 
+            console.log(arr)
+            }else return}
+            console.log(arr) 
+            log.onclick = function(){
+            for(let j = 0; j < arr.length; j += 2){
+                console.log(arr[j])
+            if(document.getElementById("log_username").value === arr[j]){
+            if(document.getElementById("log_password").value === arr[j+1]){
+                console.log("Success")}
+            else{
+                console.log("Not success")}
+            }
+            else{
+                console.log("Not success")}}}
+    </script>
+</body>
+</html>
